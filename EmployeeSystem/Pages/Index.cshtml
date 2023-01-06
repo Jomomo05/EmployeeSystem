@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Interview";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Made by Jose Beltran.</p>
+</div>
+
+<form method="get">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="@Model.Name" />
+    <input type="submit" value="Search" />
+</form>
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>RFC</th>
+        <th>Born Date</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var employee in Model.Employees)
+    {
+        <tr>
+            <td>@employee.ID</td>
+            <td>@employee.Name</td>
+            <td>@employee.LastName</td>
+            <td>@employee.RFC</td>
+            <td>@employee.BornDate</td>
+            <td>@employee.Status</td>
+        </tr>
+    }
+</table>
